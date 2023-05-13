@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Suspense } from "react";
 
 export default async function Blissmo() {
@@ -11,7 +12,7 @@ export default async function Blissmo() {
       <Suspense fallback={<Spinner />}>
         <div className="flex flex-wrap gap-2">
           {data.results.map((char) => (
-            <img alt="avatar" src={char.image} />
+            <Image key={char.id} alt="avatar" src={char.image} />
           ))}
         </div>
       </Suspense>
